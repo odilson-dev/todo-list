@@ -1,14 +1,13 @@
 const showButton = document.getElementById("showDialog");
 const favDialog = document.getElementById("favDialog");
 const outputBox = document.querySelector("output");
-const selectEl = document.querySelector("select");
-const confirmBtn = document.querySelector("#confirmBtn");
+const selectEl = favDialog.querySelector("select");
+const confirmBtn = favDialog.querySelector("#confirmBtn");
 
 // "Show the dialog" button opens the <dialog> modally
-console.log(showButton);
-// showButton.addEventListener("click", () => {
-//   favDialog.showModal();
-// });
+showButton.addEventListener("click", () => {
+  favDialog.showModal();
+});
 
 // "Favorite animal" input sets the value of the submit button
 selectEl.addEventListener("change", (e) => {
