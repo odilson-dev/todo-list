@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project: Todo List</title>
-    <script src="main.js" defer></script>
+    <script src="bundle.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>This is my html</h1>
@@ -13,7 +14,7 @@
       <form>
         <p>
           <label for="project"> Create a project: </label>
-          <input type="text" id="project" name="name" />
+          <input type="text" id="new-project" name="name" />
         </p>
         <div>
           <button value="cancel" formmethod="dialog">Cancel</button>
@@ -21,9 +22,13 @@
         </div>
       </form>
     </dialog>
-    <p>
-      <button id="showDialog">Create a new project</button>
-    </p>
-    <output></output>
+
+    <div class="content">
+      <div class="projects">
+        <output></output>
+        <button id="showDialog">Create a new project</button>
+      </div>
+      <div class="todos"></div>
+    </div>
   </body>
 </html>
