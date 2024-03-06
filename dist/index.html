@@ -12,15 +12,8 @@
     <dialog id="favDialog">
       <form>
         <p>
-          <label>
-            Favorite animal:
-            <select>
-              <option value="default">Choose…</option>
-              <option>Brine shrimp</option>
-              <option>Red panda</option>
-              <option>Spider monkey</option>
-            </select>
-          </label>
+          <label for="project"> Create a project: </label>
+          <input type="text" id="project" name="name" />
         </p>
         <div>
           <button value="cancel" formmethod="dialog">Cancel</button>
@@ -29,7 +22,7 @@
       </form>
     </dialog>
     <p>
-      <button id="showDialog">Show the dialog</button>
+      <button id="showDialog">Create a new project</button>
     </p>
     <output></output>
   </body>
