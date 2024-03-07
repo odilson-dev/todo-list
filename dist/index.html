@@ -35,12 +35,66 @@
       </form>
     </dialog>
 
+    <dialog id="todoDialog">
+      <form>
+        <p>
+          <label for="todo-title"> Title: </label>
+          <input class="input" type="text" id="todo-title" name="title" />
+        </p>
+        <p>
+          <label for="description">Description:</label>
+          <input
+            class="input"
+            type="text"
+            id="description"
+            name="description"
+          />
+        </p>
+        <p>
+          <label for="due-date">Due date:</label>
+          <input class="input" type="date" id="due-date" name="due_date" />
+        </p>
+        <fieldset>
+          <legend>What is the task's priority?</legend>
+          <label
+            ><input class="input" type="radio" name="priority" value="hight" />
+            Hight</label
+          >
+          <label
+            ><input class="input" type="radio" name="priority" value="medium" />
+            Medium</label
+          >
+          <label
+            ><input class="input" type="radio" name="priority" value="low" />
+            Low</label
+          >
+        </fieldset>
+        <p>
+          <label for="note">Note:</label><br />
+          <textarea
+            class="input"
+            name="note"
+            id="note"
+            cols="30"
+            rows="5"
+          ></textarea>
+        </p>
+
+        <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+        </div>
+      </form>
+    </dialog>
+
     <div class="content">
       <div class="projects">
         <output></output>
         <button id="showDialog">Create a new project</button>
       </div>
-      <div class="todos"></div>
+      <div class="todos">
+        <button id="showTodoDialog">Create a new Todo</button>
+      </div>
     </div>
   </body>
 </html>
