@@ -34,7 +34,25 @@ function createProject(name) {
 
 function addProjectToDOM(project) {
   const outputBox = document.querySelector("output");
-  const projectDIV = document.createElement("div");
-  projectDIV.innerHTML = `<p>${project.name}</p>`;
-  outputBox.appendChild(projectDIV);
+  const projectNode = document.createElement("div");
+  projectNode.classList.add("project");
+  projectNode.innerHTML = `<h3>${project.name}</h3>`;
+
+  const editProjectButton = document.createElement("button");
+  editProjectButton.textContent = "Edit";
+  projectNode.appendChild(editProjectButton);
+
+  const deleteProjectButton = document.createElement("button");
+  deleteProjectButton.textContent = "Delete";
+  deleteProjectButton.addEventListener("click", () => {
+    console.log("Haha");
+    deleteProject(projectNode);
+  });
+  projectNode.appendChild(deleteProjectButton);
+
+  outputBox.appendChild(projectNode);
+}
+
+function deleteProject(projectNode) {
+  projectNode.remove();
 }

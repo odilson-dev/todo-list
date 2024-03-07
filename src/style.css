@@ -1,3 +1,26 @@
 .hello {
   color: red;
 }
+.project {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr) repeat(2, 1fr);
+  gap: 15px;
+}
+#showDialog {
+  width: 100%;
+}
+.content {
+  border: 1px solid black;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr) repeat(1, 2fr);
+}
+
+.projects {
+  border: 1px solid coral;
+}
+
+.todos {
+  border: 1px solid gold;
+}
