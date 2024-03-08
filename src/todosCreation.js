@@ -8,10 +8,10 @@ export const handleTodoCreation = function () {
   const listOfTodo = [
     {
       title: "Todo",
-      description: "hjhkj",
+      description: "This is a description",
       dueDate: "2024-03-04",
-      priority: "medium",
-      note: "JHJHg",
+      priority: "Hight",
+      note: "This is a small note for the todo",
     },
   ];
 
