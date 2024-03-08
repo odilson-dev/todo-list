@@ -35,7 +35,7 @@ body {
   background-color: aliceblue;
   border-radius: 15px;
 }
-.todo-content h2,
+.todo-text-content h2,
 p {
   margin: 3px;
 }
