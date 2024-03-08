@@ -5,6 +5,16 @@ export const handleTodoCreation = function () {
   const todoDialog = document.querySelector("#todoDialog");
   const confirmBtn = todoDialog.querySelector("#confirmBtn");
 
+  const listOfTodo = [
+    {
+      title: "Todo",
+      description: "hjhkj",
+      dueDate: "2024-03-04",
+      priority: "medium",
+      note: "JHJHg",
+    },
+  ];
+
   const inputElements = todoDialog.getElementsByClassName("input");
 
   showTodoDialog.addEventListener("click", () => {
