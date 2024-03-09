@@ -6,7 +6,7 @@ export const handleProjectCreation = function () {
   const favDialog = document.getElementById("favDialog");
   const inputEl = favDialog.querySelector("#new-project");
   const confirmBtn = favDialog.querySelector("#confirmBtn");
-  let currentProjectID;
+  
 
   // "Show the dialog" button opens the <dialog> modally
   showButton.classList.add("hello");

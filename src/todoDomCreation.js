@@ -1,4 +1,5 @@
 import { loadTodos } from "./loadTodos";
+import { editTodos } from "./edit_todos";
 export const todoDomCreation = function (todo, project) {
   const todosContent = document.querySelector(".todos");
   const todoItem = document.createElement("div");
@@ -51,6 +52,9 @@ export const todoDomCreation = function (todo, project) {
   const editButton = document.createElement("button");
   editButton.textContent = "Edit";
   editButton.classList.add("edit-btn");
+  editButton.addEventListener("click", () => {
+    editTodos(todo, project);
+  });
   buttonsElement.appendChild(editButton);
 
   //   Create delete buttons
