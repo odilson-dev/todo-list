@@ -1,4 +1,5 @@
-export const todoDomCreation = function (todo) {
+import { loadTodos } from "./loadTodos";
+export const todoDomCreation = function (todo, project) {
   const todosContent = document.querySelector(".todos");
   const todoItem = document.createElement("div");
   todoItem.classList.add("todo");
@@ -54,8 +55,16 @@ export const todoDomCreation = function (todo) {
 
   //   Create delete buttons
   const deleteButton = document.createElement("button");
+  deleteButton.id = todo.id;
   deleteButton.textContent = "Delete";
   deleteButton.classList.add("delete-btn");
+  deleteButton.addEventListener("click", () => {
+    // Remove the todo Item from the corresponded todo in project's todoList
+    project.todoList = project.todoList.filter(
+      (item) => item.id != deleteButton.id
+    );
+    loadTodos(project);
+  });
   buttonsElement.appendChild(deleteButton);
 
   todoItem.appendChild(buttonsElement);

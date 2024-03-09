@@ -75,6 +75,7 @@ p {
 .delete-btn:hover {
   background-color: red;
   color: white;
+  cursor: pointer;
 }
 .edit-btn {
   color: orange;
@@ -84,4 +85,5 @@ p {
 .edit-btn:hover {
   background-color: orange;
   color: white;
+  cursor: pointer;
 }

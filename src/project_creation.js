@@ -1,10 +1,12 @@
 import { editProjectName } from "./edit_project";
+import { loadTodos } from "./loadTodos";
 import { Project } from "./project";
 export const handleProjectCreation = function () {
   const showButton = document.getElementById("showDialog");
   const favDialog = document.getElementById("favDialog");
   const inputEl = favDialog.querySelector("#new-project");
   const confirmBtn = favDialog.querySelector("#confirmBtn");
+  let currentProjectID;
 
   // "Show the dialog" button opens the <dialog> modally
   showButton.classList.add("hello");
@@ -35,6 +37,9 @@ function addProjectToDOM(project) {
   const outputBox = document.querySelector("output");
   const projectNode = document.createElement("div");
   projectNode.classList.add("project");
+  projectNode.addEventListener("click", () => {
+    loadTodos(project);
+  });
   projectNode.innerHTML = `<h3>${project.name}</h3>`;
 
   const editProjectButton = document.createElement("button");
