@@ -68,6 +68,7 @@ header h1 {
   grid-template-columns: repeat(1, 30px) repeat(1, 3fr) repeat(1, 1fr);
   background-color: aliceblue;
   border-radius: 15px;
+  border: 1px solid black;
 }
 .todo-text-content h2,
 p {
