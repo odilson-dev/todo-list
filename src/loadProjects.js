@@ -33,10 +33,13 @@ function addProjectToDOM(project, outputBox) {
 
   deleteProjectButton.addEventListener("click", () => {
     const newTaskButton = document.querySelector("#showTodoDialog");
-    // Remove the todo Item from the corresponded todo in project's todoList
-    listOfProjects = listOfProjects.filter(
-      (item) => item.id != deleteProjectButton.id
-    );
+    if (confirm("Do you really want to delete this project?")) {
+      // Remove the todo Item from the corresponded todo in project's todoList
+      listOfProjects = listOfProjects.filter(
+        (item) => item.id != deleteProjectButton.id
+      );
+    }
+
     if (listOfProjects.length == 0) {
       newTaskButton.classList.add("hide");
     }
