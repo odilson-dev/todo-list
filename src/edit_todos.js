@@ -41,12 +41,14 @@ export const editTodos = function (todo, project) {
           acc[key.trim()] = isNaN(value) ? value : parseInt(value);
           return acc;
         }, {});
-      console.log(todo);
-      todo.title = todoUpdatedData.title;
-      todo.description = todoUpdatedData.description;
-      todo.dueDate = todoUpdatedData.due_date;
-      todo.priority = todoUpdatedData.priority;
-      todo.note = todoUpdatedData.note;
+      if (todo.id == todoUpdatedData.id) {
+        todo.title = todoUpdatedData.title;
+        todo.description = todoUpdatedData.description;
+        todo.dueDate = todoUpdatedData.due_date;
+        todo.priority = todoUpdatedData.priority;
+        todo.note = todoUpdatedData.note;
+      }
+
       loadTodos(project);
     }
   });
@@ -65,7 +67,6 @@ export const editTodos = function (todo, project) {
       }
       data.push(`${element.name}: ${element.value}`);
     }
-
     editTodoDialog.close(data.join(", "));
   });
 };
