@@ -34,25 +34,31 @@ header h1 {
 
 /* PROJECTS */
 .project {
-  border: 1px solid black;
   display: grid;
-  grid-template-columns: repeat(1, 1fr) repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
+  background-color: aliceblue;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.project:hover {
+  border: 1px solid black;
 }
 
 .content {
   border: 1px solid black;
   height: 100vh;
   display: grid;
-  grid-template-columns: repeat(1, 1fr) repeat(1, 3fr);
+  grid-template-columns: repeat(1, 1fr) repeat(1, 2.5fr);
 }
 
 .projects {
-  border: 1px solid coral;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: 3px 3px 10px rgb(225, 225, 225);
 }
 
 .todos {
-  border: 1px solid gold;
   padding: 30px;
 }
 .projects-header {
@@ -61,6 +67,10 @@ header h1 {
 }
 #showDialog {
   margin: 20px;
+  border: 1px solid green;
+  background-color: transparent;
+  color: green;
+  border-radius: 5px;
 }
 .highlighted {
   background-color: yellow; /* Example highlight color */
@@ -72,6 +82,9 @@ header h1 {
   grid-template-columns: repeat(1, 30px) repeat(1, 3fr) repeat(1, 1fr);
   background-color: aliceblue;
   margin: 20px;
+  box-shadow: 0px 5px 5px 1px rgb(225, 225, 225);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .todo-text-content h2,
 p {
@@ -105,7 +118,7 @@ p {
 .edit-btn {
   background-color: transparent;
   color: red;
-  border: 2px solid red;
+  border: 1px solid red;
   padding: 5px 10px 5px 10px;
   border-radius: 5px;
   transition: 500ms;
@@ -117,7 +130,7 @@ p {
 }
 .edit-btn {
   color: orange;
-  border: 2px solid orange;
+  border: 1px solid orange;
 }
 
 .edit-btn:hover {
@@ -127,12 +140,19 @@ p {
 }
 
 .green-border {
-  border-bottom: 5px solid green;
+  border-bottom: 3px solid green;
 }
 .orange-border {
-  border-bottom: 5px solid orange;
+  border-bottom: 3px solid orange;
 }
 
 .red-border {
-  border-bottom: 5px solid red;
+  border-bottom: 3px solid red;
+}
+#github-icon {
+  color: white;
+  font-size: 30px;
+}
+a {
+  margin-left: 10px;
 }

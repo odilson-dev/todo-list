@@ -12,8 +12,7 @@ export function editProjectName(project, projectNode) {
   editDialog.addEventListener("close", () => {
     if (editDialog.returnValue != "cancel") {
       project.name = editDialog.returnValue;
-      projectNode.querySelector("h3").textContent = editDialog.returnValue;
-      console.log(project.name);
+      projectNode.querySelector("h2").textContent = editDialog.returnValue;
     }
   });
 

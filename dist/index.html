@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project: Todo List</title>
     <script src="bundle.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/4ab498ab44.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
       <div class="header">
-        <h1>Todo List</h1>
+        <h1>
+          Todo App<a
+            href="https://github.com/odilsoncode/todo-list"
+            target="_blank"
+            ><i id="github-icon" class="fa-brands fa-github"></i
+          ></a>
+        </h1>
 
         <button id="showTodoDialog">New Task</button>
       </div>
@@ -20,7 +30,7 @@
       <form>
         <p>
           <label for="project"> Create a project: </label>
-          <input type="text" id="new-project" name="name" />
+          <input type="text" id="new-project" name="name" maxlength="10" />
         </p>
         <div>
           <button value="cancel" formmethod="dialog">Cancel</button>
@@ -150,7 +160,7 @@
       <div class="projects">
         <div class="projects-header">
           <h2>My Projects</h2>
-          <button id="showDialog">Create</button>
+          <button id="showDialog">Add Project</button>
         </div>
 
         <output></output>

@@ -2,6 +2,8 @@ import { editProjectName } from "./edit_project";
 import { loadTodos } from "./loadTodos";
 import { listOfProjects } from "./project_creation";
 
+export let selectedProject ;
+
 export const loadProjects = function (listOfProjects) {
   const outputBox = document.querySelector("output");
   outputBox.textContent = "";
@@ -13,6 +15,8 @@ export const loadProjects = function (listOfProjects) {
 function addProjectToDOM(project, outputBox) {
   const projectNode = document.createElement("div");
   projectNode.classList.add("project");
+  const buttonElements = document.createElement("div");
+  buttonElements.classList.add("buttons");
   projectNode.addEventListener("click", () => {
     loadTodos(project);
   });
@@ -20,10 +24,11 @@ function addProjectToDOM(project, outputBox) {
 
   const editProjectButton = document.createElement("button");
   editProjectButton.textContent = "Edit";
+  editProjectButton.classList.add("edit-btn");
   editProjectButton.addEventListener("click", () => {
     editProjectName(project, projectNode);
   });
-  projectNode.appendChild(editProjectButton);
+  buttonElements.appendChild(editProjectButton);
 
   //   Create delete buttons
   const deleteProjectButton = document.createElement("button");
@@ -45,7 +50,12 @@ function addProjectToDOM(project, outputBox) {
     }
     loadProjects(listOfProjects);
   });
-  projectNode.appendChild(deleteProjectButton);
+  buttonElements.appendChild(deleteProjectButton);
+  projectNode.appendChild(buttonElements);
+
+  projectNode.addEventListener("click", ()=>{
+    selectedProject = project
+  })
 
   outputBox.appendChild(projectNode);
 }

@@ -1,19 +1,10 @@
 import { Todo } from "./todo";
-
+import { selectedProject } from "./loadProjects";
+import { loadTodos } from "./loadTodos";
 export const handleTodoCreation = function () {
   const showTodoDialog = document.querySelector("#showTodoDialog");
   const todoDialog = document.querySelector("#todoDialog");
   const confirmBtn = todoDialog.querySelector("#confirmBtn");
-
-  const listOfTodo = [
-    {
-      title: "Todo",
-      description: "This is a description",
-      dueDate: "2024-03-04",
-      priority: "Hight",
-      note: "This is a small note for the todo",
-    },
-  ];
 
   const inputElements = todoDialog.getElementsByClassName("input");
 
@@ -33,7 +24,9 @@ export const handleTodoCreation = function () {
           return acc;
         }, {});
     }
-    console.log(createTodo(newTodoData));
+
+    selectedProject.todoList.push(createTodo(newTodoData));
+    loadTodos(selectedProject);
   });
 
   confirmBtn.addEventListener("click", (event) => {
