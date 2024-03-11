@@ -53,6 +53,7 @@ header h1 {
 
 .todos {
   border: 1px solid gold;
+  padding: 30px;
 }
 .projects-header {
   display: flex;
@@ -67,8 +68,6 @@ header h1 {
   display: grid;
   grid-template-columns: repeat(1, 30px) repeat(1, 3fr) repeat(1, 1fr);
   background-color: aliceblue;
-  border-radius: 15px;
-  border: 1px solid black;
 }
 .todo-text-content h2,
 p {
@@ -121,4 +120,15 @@ p {
   background-color: orange;
   color: white;
   cursor: pointer;
+}
+
+.green-border {
+  border-bottom: 5px solid green;
+}
+.orange-border {
+  border-bottom: 5px solid orange;
+}
+
+.red-border {
+  border-bottom: 5px solid red;
 }

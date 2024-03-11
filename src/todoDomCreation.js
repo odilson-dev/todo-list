@@ -5,6 +5,21 @@ export const todoDomCreation = function (todo, project) {
   const todoItem = document.createElement("div");
   todoItem.classList.add("todo");
 
+  switch (todo.priority.toLowerCase()) {
+    case "hight":
+      todoItem.classList.add("red-border");
+      break;
+    case "medium":
+      todoItem.classList.add("orange-border");
+      break;
+    case "low":
+      todoItem.classList.add("green-border");
+      break;
+
+    default:
+      break;
+  }
+
   //   Create the checkbox element
   const checkboxContent = document.createElement("div");
   checkboxContent.classList.add("checkbox");
