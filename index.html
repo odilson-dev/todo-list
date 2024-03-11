@@ -95,6 +95,7 @@
     </dialog>
     <dialog id="editTodoDialog">
       <form>
+        <input class="input" type="hidden" name="id" />
         <p>
           <label for="todo-title"> Title: </label>
           <input class="input" type="text" id="todo-title" name="title" />
@@ -139,8 +140,8 @@
         </p>
 
         <div>
-          <button value="cancel" formmethod="dialog">Cancel</button>
-          <button id="confirmBtn" value="default">Confirm</button>
+          <button value="cancel" formmethod="dialog">Close</button>
+          <button id="confirmBtn" value="default">Update</button>
         </div>
       </form>
     </dialog>
