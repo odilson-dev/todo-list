@@ -62,6 +62,9 @@ header h1 {
 #showDialog {
   margin: 20px;
 }
+.highlighted {
+  background-color: yellow; /* Example highlight color */
+}
 
 /* TODO ITEM */
 .todo {

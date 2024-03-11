@@ -11,6 +11,7 @@ export class Project {
         dueDate: "2024-03-04",
         priority: "Hight",
         note: "This is a small note for the todo",
+        checked: true,
       },
       {
         id: 2,
@@ -19,6 +20,7 @@ export class Project {
         dueDate: "2024-03-04",
         priority: "Hight",
         note: "This is a small note for the todo",
+        checked: false,
       },
       {
         id: 3,
@@ -27,6 +29,7 @@ export class Project {
         dueDate: "2024-03-04",
         priority: "Hight",
         note: "This is a small note for the todo",
+        checked: true,
       },
     ];
   }

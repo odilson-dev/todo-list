@@ -8,5 +8,6 @@ export class Todo {
     this.priority = priority;
     this.note = note;
     this.projectID = projectID;
+    this.checked = false;
   }
 }

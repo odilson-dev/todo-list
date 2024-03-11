@@ -1,5 +1,5 @@
-import { loadTodos } from "./loadTodos";
 import { editTodos } from "./edit_todos";
+import { loadTodos } from "./loadTodos";
 export const todoDomCreation = function (todo, project) {
   const todosContent = document.querySelector(".todos");
   const todoItem = document.createElement("div");
@@ -35,15 +35,27 @@ export const todoDomCreation = function (todo, project) {
 
   const checkboxElement = document.createElement("input");
   checkboxElement.type = "checkbox";
+  if (todo.checked) {
+    checkboxElement.checked = true;
+    titleElement.style.textDecoration = "line-through";
+    descriptionElement.style.textDecoration = "line-through";
+    editButton.classList.add("hide");
+  } else {
+    titleElement.style.textDecoration = "none";
+    descriptionElement.style.textDecoration = "none";
+    editButton.classList.remove("hide");
+  }
   checkboxElement.addEventListener("click", () => {
     if (checkboxElement.checked) {
       titleElement.style.textDecoration = "line-through";
       descriptionElement.style.textDecoration = "line-through";
       editButton.classList.add("hide");
+      todo.checked = true;
     } else {
       titleElement.style.textDecoration = "none";
       descriptionElement.style.textDecoration = "none";
       editButton.classList.remove("hide");
+      todo.checked = false;
     }
   });
   checkboxContent.appendChild(checkboxElement);
