@@ -19,12 +19,33 @@ export const todoDomCreation = function (todo, project) {
     default:
       break;
   }
+  //   Create title
+  const titleElement = document.createElement("h2");
+  titleElement.textContent = todo.title;
+  //   Create description
+  const descriptionElement = document.createElement("p");
+  descriptionElement.textContent = todo.description;
 
   //   Create the checkbox element
   const checkboxContent = document.createElement("div");
   checkboxContent.classList.add("checkbox");
+
+  //   Create editButton
+  const editButton = document.createElement("button");
+
   const checkboxElement = document.createElement("input");
   checkboxElement.type = "checkbox";
+  checkboxElement.addEventListener("click", () => {
+    if (checkboxElement.checked) {
+      titleElement.style.textDecoration = "line-through";
+      descriptionElement.style.textDecoration = "line-through";
+      editButton.classList.add("hide");
+    } else {
+      titleElement.style.textDecoration = "none";
+      descriptionElement.style.textDecoration = "none";
+      editButton.classList.remove("hide");
+    }
+  });
   checkboxContent.appendChild(checkboxElement);
   todoItem.appendChild(checkboxContent);
 
@@ -32,14 +53,8 @@ export const todoDomCreation = function (todo, project) {
   const todoTextContent = document.createElement("div");
   todoTextContent.classList.add("todo-text-content");
 
-  //   Create title
-  const titleElement = document.createElement("h2");
-  titleElement.textContent = todo.title;
   todoTextContent.appendChild(titleElement);
 
-  //   Create description
-  const descriptionElement = document.createElement("p");
-  descriptionElement.textContent = todo.description;
   todoTextContent.appendChild(descriptionElement);
 
   todoItem.appendChild(todoTextContent);
@@ -48,8 +63,6 @@ export const todoDomCreation = function (todo, project) {
   const buttonsElement = document.createElement("div");
   buttonsElement.classList.add("buttons");
 
-  //   Create editButton
-  const editButton = document.createElement("button");
   editButton.textContent = "Edit";
   editButton.classList.add("edit-btn");
   editButton.id = todo.id;
