@@ -1,3 +1,4 @@
+import { each } from "lodash";
 import { editProjectName } from "./edit_project";
 import { loadTodos } from "./loadTodos";
 import { listOfProjects } from "./project_creation";
@@ -21,6 +22,7 @@ function addProjectToDOM(project, outputBox) {
   // Create the project name Element
   const projectName = document.createElement("h2");
   projectName.textContent = project.name;
+  projectName.id = project.id;
   projectName.style.cursor = "pointer";
   projectName.addEventListener("click", () => {
     loadTodos(project);

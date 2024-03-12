@@ -33,6 +33,10 @@ export const todoDomCreation = function (todo, project) {
   //   Create editButton
   const editButton = document.createElement("button");
 
+  //   Create delete buttons
+  const deleteButton = document.createElement("button");
+  deleteButton.style.gridColumn = "2 / span 1";
+
   const checkboxElement = document.createElement("input");
   checkboxElement.type = "checkbox";
   if (todo.checked) {
@@ -86,8 +90,6 @@ export const todoDomCreation = function (todo, project) {
   });
   buttonsElement.appendChild(editButton);
 
-  //   Create delete buttons
-  const deleteButton = document.createElement("button");
   deleteButton.id = todo.id;
   deleteButton.textContent = "Delete";
   deleteButton.classList.add("delete-btn");
