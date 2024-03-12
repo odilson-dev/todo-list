@@ -28,6 +28,7 @@ header h1 {
   background-color: white;
   color: blueviolet;
 }
+
 .hide {
   display: none;
 }
@@ -39,7 +40,7 @@ header h1 {
   gap: 10px;
   background-color: aliceblue;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-top: 10px;
   padding: 5px;
   padding-right: 10px;
 }
@@ -64,11 +65,12 @@ header h1 {
 }
 
 .todos {
-  padding: 30px;
+  padding: 0px 60px;
 }
 .projects-header {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid rgb(204, 204, 204);
 }
 #showDialog {
   margin: 20px;
@@ -86,11 +88,16 @@ header h1 {
   display: grid;
   grid-template-columns: repeat(1, 30px) repeat(1, 3fr) repeat(1, 1fr);
   background-color: aliceblue;
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   box-shadow: 0px 5px 5px 1px rgb(225, 225, 225);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding-right: 10px;
+}
+.todo-list {
+  padding-left: 0;
+  padding-right: 0;
 }
 .todo-text-content h2,
 p {

@@ -1,7 +1,8 @@
 import { editTodos } from "./edit_todos";
 import { loadTodos } from "./loadTodos";
 export const todoDomCreation = function (todo, project) {
-  const todosContent = document.querySelector(".todos");
+  const todosContent = document.querySelector(".todo-list");
+
   const todoItem = document.createElement("div");
   todoItem.classList.add("todo");
 

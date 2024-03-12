@@ -13,6 +13,10 @@ export function editProjectName(project, projectNode) {
     if (editDialog.returnValue != "cancel") {
       project.name = editDialog.returnValue;
       projectNode.querySelector("h2").textContent = editDialog.returnValue;
+      const projectNameLabelH2 = document
+        .querySelector(".project-name")
+        .querySelector("h2");
+      projectNameLabelH2.textContent = editDialog.returnValue;
     }
   });
 

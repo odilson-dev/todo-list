@@ -21,10 +21,15 @@ function addProjectToDOM(project, outputBox) {
 
   // Create the project name Element
   const projectName = document.createElement("h2");
+  const projectNameLabelH2 = document
+    .querySelector(".project-name")
+    .querySelector("h2");
+
   projectName.textContent = project.name;
   projectName.id = project.id;
   projectName.style.cursor = "pointer";
   projectName.addEventListener("click", () => {
+    projectNameLabelH2.textContent = project.name;
     loadTodos(project);
   });
   projectNode.appendChild(projectName);
