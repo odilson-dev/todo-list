@@ -1,9 +1,11 @@
-import { each } from "lodash";
 import { editProjectName } from "./edit_project";
 import { loadTodos } from "./loadTodos";
 import { listOfProjects } from "./project_creation";
 
 export let selectedProject;
+const projectNameLabelH2 = document
+  .querySelector(".project-name")
+  .querySelector("h2");
 
 export const loadProjects = function (listOfProjects) {
   const outputBox = document.querySelector("output");
@@ -21,9 +23,6 @@ function addProjectToDOM(project, outputBox) {
 
   // Create the project name Element
   const projectName = document.createElement("h2");
-  const projectNameLabelH2 = document
-    .querySelector(".project-name")
-    .querySelector("h2");
 
   projectName.textContent = project.name;
   projectName.id = project.id;
@@ -50,7 +49,7 @@ function addProjectToDOM(project, outputBox) {
 
   deleteProjectButton.addEventListener("click", () => {
     const newTaskButton = document.querySelector("#showTodoDialog");
-    const todosContent = document.querySelector(".todos");
+    const todosContent = document.querySelector(".todo-list");
     if (confirm("Do you really want to delete this project?")) {
       console.log("Loll");
 
@@ -60,6 +59,7 @@ function addProjectToDOM(project, outputBox) {
       );
     }
     todosContent.textContent = "";
+    projectNameLabelH2.textContent = "";
 
     if (listOfProjects.length == 0) {
       newTaskButton.classList.add("hide");
