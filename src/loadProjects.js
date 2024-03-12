@@ -2,7 +2,7 @@ import { editProjectName } from "./edit_project";
 import { loadTodos } from "./loadTodos";
 import { listOfProjects } from "./project_creation";
 
-export let selectedProject ;
+export let selectedProject;
 
 export const loadProjects = function (listOfProjects) {
   const outputBox = document.querySelector("output");
@@ -17,10 +17,15 @@ function addProjectToDOM(project, outputBox) {
   projectNode.classList.add("project");
   const buttonElements = document.createElement("div");
   buttonElements.classList.add("buttons");
-  projectNode.addEventListener("click", () => {
+
+  // Create the project name Element
+  const projectName = document.createElement("h2");
+  projectName.textContent = project.name;
+  projectName.style.cursor = "pointer";
+  projectName.addEventListener("click", () => {
     loadTodos(project);
   });
-  projectNode.innerHTML = `<h2>${project.name}</h2>`;
+  projectNode.appendChild(projectName);
 
   const editProjectButton = document.createElement("button");
   editProjectButton.textContent = "Edit";
@@ -38,12 +43,16 @@ function addProjectToDOM(project, outputBox) {
 
   deleteProjectButton.addEventListener("click", () => {
     const newTaskButton = document.querySelector("#showTodoDialog");
+    const todosContent = document.querySelector(".todos");
     if (confirm("Do you really want to delete this project?")) {
+      console.log("Loll");
+
       // Remove the todo Item from the corresponded todo in project's todoList
       listOfProjects = listOfProjects.filter(
         (item) => item.id != deleteProjectButton.id
       );
     }
+    todosContent.textContent = "";
 
     if (listOfProjects.length == 0) {
       newTaskButton.classList.add("hide");
@@ -53,9 +62,9 @@ function addProjectToDOM(project, outputBox) {
   buttonElements.appendChild(deleteProjectButton);
   projectNode.appendChild(buttonElements);
 
-  projectNode.addEventListener("click", ()=>{
-    selectedProject = project
-  })
+  projectNode.addEventListener("click", () => {
+    selectedProject = project;
+  });
 
   outputBox.appendChild(projectNode);
 }
