@@ -81,7 +81,7 @@ export const todoDomCreation = function (todo, project) {
   const buttonsElement = document.createElement("div");
   buttonsElement.classList.add("buttons");
 
-  editButton.textContent = "Edit";
+  editButton.textContent = "View";
   editButton.classList.add("edit-btn");
   editButton.id = todo.id;
   editButton.addEventListener("click", () => {
