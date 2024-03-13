@@ -22,7 +22,7 @@ function addProjectToDOM(project, outputBox) {
   buttonElements.classList.add("buttons");
 
   // Create the project name Element
-  const projectName = document.createElement("h2");
+  const projectName = document.createElement("h3");
 
   projectName.textContent = project.name;
   projectName.id = project.id;
@@ -57,6 +57,7 @@ function addProjectToDOM(project, outputBox) {
       listOfProjects = listOfProjects.filter(
         (item) => item.id != deleteProjectButton.id
       );
+      window.localStorage.setItem("projects", JSON.stringify(listOfProjects));
     }
     todosContent.textContent = "";
     projectNameLabelH2.textContent = "";

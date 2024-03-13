@@ -1,5 +1,6 @@
 import { editTodos } from "./edit_todos";
 import { loadTodos } from "./loadTodos";
+import { listOfProjects } from "./project_creation";
 export const todoDomCreation = function (todo, project) {
   const todosContent = document.querySelector(".todo-list");
 
@@ -99,6 +100,14 @@ export const todoDomCreation = function (todo, project) {
     project.todoList = project.todoList.filter(
       (item) => item.id != deleteButton.id
     );
+    // Update listOfProjects
+    for (const element of listOfProjects) {
+      if (element.id == project.id) {
+        element.todoList = project.todoList;
+      }
+    }
+    window.localStorage.setItem("projects", JSON.stringify(listOfProjects));
+
     loadTodos(project);
   });
   buttonsElement.appendChild(deleteButton);

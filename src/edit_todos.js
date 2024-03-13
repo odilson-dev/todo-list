@@ -1,4 +1,5 @@
 import { loadTodos } from "./loadTodos";
+import { listOfProjects } from "./project_creation";
 
 export const editTodos = function (todo, project) {
   const editTodoDialog = document.getElementById("editTodoDialog");
@@ -48,7 +49,17 @@ export const editTodos = function (todo, project) {
         todo.priority = todoUpdatedData.priority;
         todo.note = todoUpdatedData.note;
       }
-
+      // Update listOfProjects
+      for (const element of listOfProjects) {
+        if (element.id == project.id) {
+          for (let todoItem of element.todoList) {
+            if (todo.id == todoItem.id) {
+              todoItem = todo;
+            }
+          }
+        }
+      }
+      window.localStorage.setItem("projects", JSON.stringify(listOfProjects));
       loadTodos(project);
     }
   });

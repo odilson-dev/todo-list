@@ -1,6 +1,10 @@
 import { loadProjects } from "./loadProjects";
 import { Project } from "./project";
-export let listOfProjects = [];
+export let listOfProjects = window.localStorage.getItem("projects")
+  ? JSON.parse(window.localStorage.getItem("projects"))
+  : [];
+
+loadProjects(listOfProjects);
 const newTaskButton = document.querySelector("#showTodoDialog");
 
 export const handleProjectCreation = function () {
@@ -32,7 +36,8 @@ export const handleProjectCreation = function () {
 function createProject(name) {
   const newProject = new Project(name);
   listOfProjects.push(newProject);
-  loadProjects(listOfProjects);
+  window.localStorage.setItem("projects", JSON.stringify(listOfProjects));
+  loadProjects(JSON.parse(window.localStorage.getItem("projects")));
   if (listOfProjects.length == 1) {
     newTaskButton.classList.remove("hide");
   }

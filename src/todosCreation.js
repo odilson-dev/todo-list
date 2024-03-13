@@ -1,6 +1,7 @@
 import { Todo } from "./todo";
 import { selectedProject } from "./loadProjects";
 import { loadTodos } from "./loadTodos";
+import { listOfProjects } from "./project_creation";
 export const handleTodoCreation = function () {
   const showTodoDialog = document.querySelector("#showTodoDialog");
   const todoDialog = document.querySelector("#todoDialog");
@@ -24,8 +25,15 @@ export const handleTodoCreation = function () {
           return acc;
         }, {});
     }
-
-    selectedProject.todoList.push(createTodo(newTodoData));
+    const newTodoItem = createTodo(newTodoData);
+    selectedProject.todoList.push(newTodoItem);
+    // Update listOfProjects
+    for (const element of listOfProjects) {
+      if (element.id == selectedProject.id) {
+        element.todoList.push(newTodoItem);
+      }
+    }
+    window.localStorage.setItem("projects", JSON.stringify(listOfProjects));
     loadTodos(selectedProject);
   });
 
