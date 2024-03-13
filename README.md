@@ -2,6 +2,8 @@
 
 Welcome to our Todo List Application! This project represents a comprehensive todo list solution that empowers users to manage their tasks efficiently and effortlessly. Below, you'll find a detailed breakdown of the features and functionalities implemented in this application:
 
+![Screen Capture](images/Todo-app.png)
+
 ## Features and Functionalities:
 
 ### 1. Dynamic Todo Creation:
