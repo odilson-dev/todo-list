@@ -1,6 +1,5 @@
 import { loadProjects } from "./loadProjects";
 import { Project } from "./project";
-localStorage.clear();
 export let listOfProjects = window.localStorage.getItem("projects")
   ? JSON.parse(window.localStorage.getItem("projects"))
   : [
